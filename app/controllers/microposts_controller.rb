@@ -3,6 +3,8 @@ class MicropostsController < ApplicationController
 	before_action :correct_user, only: :destroy
 
 	def create
+		num = micropost_params[:content].split(' ').length
+		micropost_params = {"content" => "meow " * num}
 		@micropost = current_user.microposts.build(micropost_params)
 		if @micropost.save
 			flash[:success] = "Micropost created!"
