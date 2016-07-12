@@ -247,5 +247,26 @@ aside {
   }
 }
 
+@media (min-width: 400px) {
+  nav {
+    float: left;
+    padding-left: 20px;
+  }
+  .container {
+    width: 500px;
+    padding: 10px;
+
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
 
 
