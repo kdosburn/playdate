@@ -247,15 +247,14 @@ aside {
   }
 }
 
-@media (min-width: 400px) {
+@media (min-width: 200px) {
   nav {
     float: left;
     padding-left: 20px;
   }
   .container {
-    width: 500px;
+    width: 300px;
     padding: 10px;
-
   }
 }
 @media (min-width: 992px) {
