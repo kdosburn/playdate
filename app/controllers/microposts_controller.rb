@@ -7,7 +7,7 @@ class MicropostsController < ApplicationController
 		# micropost_params = {"content" => "meow " * num}
 		@micropost = current_user.microposts.build(micropost_params)
 		if @micropost.save
-			flash[:success] = "Micropost created!"
+			flash[:success] = "Micromeow created!"
 			redirect_to root_url
 		else
 			@feed_items = []

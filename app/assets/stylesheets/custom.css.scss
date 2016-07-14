@@ -1,13 +1,16 @@
 @import "bootstrap";
 
-/* -- MIXINS -- VARIABLES -- ETC -- */
+/* mixins, variables, etc. */
+
+$grayMediumLight: #eaeaea;
+
 @mixin box_sizing {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-/* -- UNIVERSAL -- UNIVERSAL -- UNIVERSAL -- */
+/* universal */
 
 html {
   overflow-y: scroll;
@@ -22,44 +25,45 @@ section {
 }
 
 textarea {
-	resize: vertical;
+  resize: vertical;
 }
 
 .center {
-	text-align: center;
+  text-align: center;
   h1 {
     margin-bottom: 10px;
   }
 }
 
-/* -- TYPOGRAPHY -- TYPOGRAPHY -- TYPOGRAPHY -- */
+/* typography */
 
 h1, h2, h3, h4, h5, h6 {
-	line-height: 1;
+  line-height: 1;
 }
 
 h1 {
-	font-size: 3em;
-	letter-spacing: -2px;
-	margin-bottom: 30px;
-	text-align: center;
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
 }
 
 h2 {
-	font-size: 1.2em;
-	letter-spacing: -1px;
-	margin-bottom: 30px;
-	text-align: center;
-	font-weight: normal;
-	color: #999;
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: $grayLight;
 }
 
 p {
-	font-size: 1.1em;
-	line-height: 1.7em; 
+  font-size: 1.1em;
+  line-height: 1.7em;
 }
 
-/* -- HEADER -- HEADER -- HEADER -- */
+
+/* header */
 
 #logo {
   float: left;
@@ -77,32 +81,40 @@ p {
   }
 }
 
-/* -- FOOTER -- FOOTER -- FOOTER -- */
-
-$favTeal: #00a5ac;
+/* footer */
 
 footer {
   margin-top: 45px;
   padding-top: 5px;
-  border-top: 1px solid #eaeaea;
-  color: $favTeal;
+  border-top: 1px solid $grayMediumLight;
+  color: $grayLight;
   a {
-  	color: $favTeal;
-  	&:hover {
-  		color: #222;
-  	}
+    color: $gray;
+    &:hover {
+      color: $grayDarker;
+    }
   }
   small {
-  	float: left;
+    float: left;
   }
   ul {
-  	float: right;
-  	list-style: none;
-  	li {
-  		float: left;
-  		margin-left: 10px;
-  	}
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 10px;
+    }
   }
+}
+
+/* miscellaneous */
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
 }
 
 /* sidebar */
@@ -110,7 +122,7 @@ footer {
 aside {
   section {
     padding: 10px 0;
-    border-top: 1px solid green;
+    border-top: 1px solid $grayLighter;
     &:first-child {
       border: 0;
       padding-top: 0;
@@ -128,6 +140,11 @@ aside {
       margin-top: 0px;
     }
   }
+}
+
+.gravatar {
+  float: left;
+  margin-right: 10px;
 }
 
 .stats {
@@ -159,11 +176,6 @@ aside {
   }
 }
 
-.gravatar {
-  float: left;
-  margin-right: 10px;
-}
-
 /* forms */
 
 input, textarea, select, .uneditable-input {
@@ -174,11 +186,11 @@ input, textarea, select, .uneditable-input {
 }
 
 input {
-  height: auto !important; 
+  height: auto !important;
 }
 
 #error_explanation {
-  color: red;
+  color: #f00;
   ul {
     list-style: none;
     margin: 0 0 18px 0;
@@ -187,17 +199,7 @@ input {
 
 .field_with_errors {
   @extend .control-group;
-  @extend .error; 
-}
-
-/* -- MISC -- MISC -- MISC -- */
-
-.debug_dump {
-  clear: both;
-  float: left;
-  width: 100%;
-  margin-top: 45px;
-  @include box_sizing; 
+  @extend .error;
 }
 
 /* Users index */
@@ -208,9 +210,9 @@ input {
   li {
     overflow: auto;
     padding: 10px 0;
-    border-top: 1px solid $favTeal;
+    border-top: 1px solid $grayLighter;
     &:last-child {
-      border-bottom: 1px solid $favTeal;
+      border-bottom: 1px solid $grayLighter;
     }
   }
 }
@@ -219,27 +221,23 @@ input {
 
 .microposts {
   list-style: none;
-  margin: 10px 000;
+  margin: 10px 0 0 0;
 
   li {
     padding: 10px 0;
     border-top: 1px solid #e8e8e8;
   }
 }
-
 .content {
   display: block;
 }
-
 .timestamp {
-  color: $favTeal;
+  color: $grayLight;
 }
-
 .gravatar {
   float: left;
   margin-right: 10px;
 }
-
 aside {
   textarea {
     height: 100px;
@@ -247,25 +245,6 @@ aside {
   }
 }
 
-@media (min-width: 200px) {
-  nav {
-    float: left;
-    padding-left: 20px;
-  }
-  .container {
-    width: 300px;
-    padding: 10px;
-  }
+.row {
+  margin: 10px;
 }
-@media (min-width: 992px) {
-  .container {
-    width: 970px;
-  }
-}
-@media (min-width: 1200px) {
-  .container {
-    width: 1170px;
-  }
-}
-
-

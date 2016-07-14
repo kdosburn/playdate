@@ -5,18 +5,29 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/foundation.css">
+  <link rel="stylesheet" href="css/app.css">
   <%= render 'layouts/shim' %>
 </head>
 <body>
 	<%= render 'layouts/header' %>
-	<div class="container">
-		<% flash.each do |key, value| %>
-			<div class="alert alert-<%= key %>"><%= value %></div>
-		<% end %>
-		<%= yield %>
-		<%= render 'layouts/footer' %>
-		<%= debug(params) if Rails.env.development? %>
-	</div>
+    <div class="row">
+      <div class="large-8 medium-8 columns">
+        <div class="row">
+          <div class="large-12 columns">
+						<% flash.each do |key, value| %>
+							<div class="alert alert-<%= key %>"><%= value %></div>
+						<% end %>
+						<%= yield %>
+						<%= render 'layouts/footer' %>
+						<%= debug(params) if Rails.env.development? %>
+					</div>
+				</div>			
+			</div>
+		</div>
+	<script src="js/vendor/jquery.js"></script>
+	<script src="js/vendor/what-input.js"></script>
+	<script src="js/vendor/foundation.js"></script>
+	<script src="js/app.js"></script>
 </body>
 </html>
