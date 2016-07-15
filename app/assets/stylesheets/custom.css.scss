@@ -4,6 +4,10 @@
 
 $grayMediumLight: #eaeaea;
 
+
+    
+.navbar-nav { -webkit-backface-visibility: hidden; }
+
 @mixin box_sizing {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -11,13 +15,6 @@ $grayMediumLight: #eaeaea;
 }
 
 /* universal */
-
-
-{
-  -webkit-backface-visibility: hidden;
-}
-    
-.navbar-nav { -webkit-backface-visibility: hidden; }
 
 html {
   overflow-y: scroll;
